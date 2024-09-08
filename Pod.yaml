@@ -1,0 +1,14 @@
+# To create a new Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: newyamlpod
+  labels:
+    env: demo
+    type: frontend
+spec:
+  containers:
+  - name: nginxcontainer
+    image: nginx
+    ports:
+    - containerPort: 80

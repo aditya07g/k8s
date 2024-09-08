@@ -1,0 +1,19 @@
+# this is used to create replica controller
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rc-nginx
+  labels:
+    env: demo
+    type: rs
+spec: 
+  template:
+    metadata:
+      name: newyamlpod
+      labels:
+        env: demo
+    spec:
+      containers:
+      - name: nginxcontainer
+        image: nginx
+  replicas: 3
